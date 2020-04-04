@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_03_005505) do
+ActiveRecord::Schema.define(version: 2020_04_04_013420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(version: 2020_04_03_005505) do
     t.text "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.text "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sales", primary_key: "code_sale", id: :string, limit: 12, force: :cascade do |t|
+    t.string "client", limit: 60
+    t.date "sale_date"
+    t.text "address"
+    t.text "phone"
+    t.integer "total"
+    t.string "status", limit: 15
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code_sale"], name: "index_sales_on_code_sale", unique: true
   end
 
 end

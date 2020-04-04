@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code sale</th>
+      <th>Client</th>
+      <th>Sale date</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Total</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.code_sale %></td>
+        <td><%= sale.client %></td>
+        <td><%= sale.sale_date %></td>
+        <td><%= sale.address %></td>
+        <td><%= sale.phone %></td>
+        <td><%= sale.total %></td>
+        <td><%= sale.total %></td>
+        <td><%= sale.status %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sale', new_sale_path %>
