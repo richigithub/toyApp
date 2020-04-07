@@ -15,3 +15,6 @@ Product.create(name: 'Conejo de Peluche', description: 'Tamaño mediano - Felpa 
 Product.create(name: 'Trompo de Madera', description: 'Pequeño - Madera de Pino - Marca_ToyStore', category: 'Juguetes')
 Product.create(name: 'Coche control remoto', description: 'Coche electrico - Control Alambrico -  Marca_ToyStore', category: 'Coches')
 Product.create(name: 'Barbie House', description: 'Barbie with House - Colleción - Marca_Matel', category: 'Muñecos')
+
+#Sales =
+#Sale.create(code_sale: 'v20180314001', client: 'Ricardo Silva', sale_date: '2018-03-14',address: 'Calle 41 #36-65', phone: '3135478954', total: 50000 )

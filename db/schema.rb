@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_013420) do
 
   create_table "sales", primary_key: "code_sale", id: :string, limit: 12, force: :cascade do |t|
     t.string "client", limit: 60
-    t.date "sale_date"
+    t.date.now "sale_date"
     t.text "address"
     t.text "phone"
     t.integer "total"
